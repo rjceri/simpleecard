@@ -1,0 +1,149 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: 'Arial', sans-serif;
+    background: linear-gradient(135deg, #8e44ad, #3498db);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+    color: white;
+    text-align: center;
+    flex-direction: column;
+    margin: 0;
+}
+
+.game-container {
+    text-align: center;
+    background-color: rgba(0, 0, 0, 0.7);
+    padding: 30px;
+    border-radius: 15px;
+    box-shadow: 0 0 15px rgba(0, 0, 0, 0.3);
+    width: 90%;
+    max-width: 600px;
+}
+
+h1 {
+    font-size: 2rem;
+    margin-bottom: 20px;
+    margin-top: 20px;
+    text-transform: uppercase;
+    letter-spacing: 3px;
+}
+
+.cards-container {
+    display: grid;
+    grid-template-columns: repeat(4, 120px);
+    grid-template-rows: repeat(4, 120px);
+    grid-gap: 10px;
+    margin-bottom: 20px;
+}
+
+.card {
+    width: 120px;
+    height: 120px;
+    background-color: #2980b9;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    font-size: 40px;
+    color: #ecf0f1;
+    cursor: pointer;
+    border-radius: 10px;
+    transition: transform 0.3s, backround-color 0.5s;
+    box-shadow: 0 3px 8px rgb(0, 0, 0, 0.2);
+    margin-left: 15px;
+    margin-right: 20px;
+}
+.card i {
+    font-size: 60px;
+}
+
+.card.flipped {
+    background-color: #2ecc71;
+    transform:rotateY(180deg);
+}
+.card:hover {
+    transform: scale(1.1);
+}
+.button {
+    padding: 10px 20px;
+    background-color: #e74c3c;
+    color: white;
+    border: none;
+    border-radius: 5px;
+    font-size: 1.2rem;
+    cursor: pointer;
+    transition: background-color 0.3s;
+    margin-top: 20px;
+}
+.button:hover {
+    background-color: #c0392b;
+}
+@media (max-width:768px) {
+    .cards-container {
+        grid-template-columns: repeat(4, 90px);
+        grid-template-rows: repeat(4, 90px);
+    }
+    .card {
+        width: 90px;
+        height: 90px;
+        font-size: 30px;
+    }
+    card i {
+        font-size: 480px;
+    }
+    .h1 {
+        font-size: 2rem;
+    }
+    .button {
+        font-size: 3rem;
+        padding: 8px 15px;
+    }
+
+    @media (max-width:480px) {
+        .cards-container {
+            grid-template-columns: repeat(4, 50px);
+            grid-template-rows: repeat(4, 50px);
+        }
+        .card {
+            width: 50px;
+            height: 50px;
+            font-size: 25px;
+        }
+        .card i {
+            font-size: 30px;
+        }
+        .h1 {
+            font-size: 2rem;
+        }
+        .button {
+            font-size: 0.9rem;
+            padding: 7px 12px;
+        }
+    }
+}
+
+.card.matched {
+    background-color: #4CAF50;
+    pointer-events: none;
+}
+
+button {
+    padding: 10px 20px;
+    font-family: Arial, Helvetica, sans-serif;
+    font-size: 1.3em;
+    cursor: pointer;
+    border: none;
+    background-color: #007BFF;
+    color: white;
+    border-radius: 5px;
+}
+
+button:hover {
+    background-color: #0056b3;
+}
